@@ -32,11 +32,11 @@ Repostas disponíveis em [ex1/queries.txt](ex1/queries.txt)
 ## Execução
 Ir para o diretório ex1 e executar
 ```
-docker-compose up --build -d
+docker compose up --build -d
 ```
 Para parar os containers
 ```
-docker-compose down
+docker compose down
 ```
 
 
@@ -61,10 +61,10 @@ A API de dados está em [ex2/api_dados](ex2/api_dados) e a interface em [ex2/int
 ## Execução
 Ir para o diretório ex2 e executar
 ```
-docker-compose up --build -d
+docker compose up --build -d
 ```
 Para parar os containers
 ```
-docker-compose down
+docker compose down
 ```
 
