@@ -38,6 +38,7 @@ Para parar os containers
 ```
 docker compose down
 ```
+Opcionalmente, incluir flag --remove-orphans para eliminar o container do mongo totalmente.
 
 
 # EXERCÍCIO 2
@@ -67,4 +68,4 @@ Para parar os containers
 ```
 docker compose down
 ```
-
+Opcionalmente, incluir flag --remove-orphans para eliminar o container do mongo totalmente.
