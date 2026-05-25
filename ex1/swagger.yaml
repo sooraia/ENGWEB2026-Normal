@@ -21,7 +21,6 @@ paths:
       tags:
         - Autores
       summary: Lista todos os autores
-      description: Devolve a lista de autores ordenada alfabeticamente pelo nome, incluindo os jogos associados.
       responses:
         '200':
           description: Lista de autores.
@@ -39,7 +38,6 @@ paths:
       tags:
         - Categorias
       summary: Lista todas as categorias
-      description: Devolve a lista de categorias ordenada alfabeticamente pelo nome, incluindo os jogos associados.
       responses:
         '200':
           description: Lista de categorias.
@@ -57,7 +55,6 @@ paths:
       tags:
         - Jogos
       summary: Lista jogos
-      description: Devolve todos os jogos. Se for usado o parâmetro `editora`, devolve apenas os jogos dessa editora.
       parameters:
         - in: query
           name: editora
@@ -80,13 +77,12 @@ paths:
       tags:
         - Jogos
       summary: Cria um novo jogo
-      description: Acrescenta um novo jogo à base de dados.
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/JogoInput'
+              type: object
       responses:
         '201':
           description: Jogo criado com sucesso.
@@ -102,7 +98,6 @@ paths:
       tags:
         - Jogos
       summary: Obtém um jogo por id
-      description: Devolve toda a informação do jogo com o identificador indicado.
       parameters:
         - in: path
           name: id
@@ -126,7 +121,6 @@ paths:
       tags:
         - Jogos
       summary: Atualiza um jogo
-      description: Atualiza o registo do jogo com o identificador indicado.
       parameters:
         - in: path
           name: id
@@ -139,7 +133,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/JogoInput'
+              type: object
       responses:
         '200':
           description: Jogo atualizado com sucesso.
@@ -156,7 +150,6 @@ paths:
       tags:
         - Jogos
       summary: Remove um jogo
-      description: Elimina o registo do jogo com o identificador indicado.
       parameters:
         - in: path
           name: id
@@ -191,9 +184,11 @@ components:
         - _id
         - name
 
-    JogoInput:
+    Jogo:
       type: object
       properties:
+        _id:
+          type: string
         name:
           type: string
         year:
@@ -224,16 +219,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/PremioRef'
-      required:
-        - name
-
-    Jogo:
-      allOf:
-        - $ref: '#/components/schemas/JogoInput'
-        - type: object
-          properties:
-            _id:
-              type: string
 
     Autor:
       type: object
@@ -245,7 +230,7 @@ components:
         jogos:
           type: array
           items:
-            $ref: '#/components/schemas/JogoMini'
+            $ref: '#/components/schemas/JogoSimplificado'
       required:
         - id
         - name
@@ -261,13 +246,13 @@ components:
         jogos:
           type: array
           items:
-            $ref: '#/components/schemas/JogoMini'
+            $ref: '#/components/schemas/JogoSimplificado'
       required:
         - id
         - name
         - jogos
 
-    JogoMini:
+    JogoSimplificado:
       type: object
       properties:
         id:

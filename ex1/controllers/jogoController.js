@@ -119,13 +119,19 @@ const atualizarAutores = async (previousAutores, nextAutores, jogoRef) => {
         if (!nextIds.has(autorId)) { await Autor.findByIdAndUpdate(autorId, {$pull: { jogos: { _id: jogoRef._id } }});}
     }
 
-    await Autor.updateMany({ 'jogos._id': jogoRef._id }, { $set: { 'jogos.$[jogo].name': jogoRef.name } }, { arrayFilters: [{ 'jogo._id': jogoRef._id }] }
+    await Autor.updateMany({ 'jogos._id': jogoRef._id }, { $set: {'jogos.$[jogo].name': jogoRef.name } }, { arrayFilters: [{ 'jogo._id': jogoRef._id }] }
     );
 };
 
 const atualizarCategorias = async (previousCategory, nextCategory, jogoRef) => {
-    const prev_cat_id = previousCategory ? getCategoryId(previousCategory) : null;
-    const nextCategoryId = nextCategory ? getCategoryId(nextCategory) : null;
+    var prev_cat_id = null;
+    var nextCategoryId = null;
+    if (previousCategory) {
+        prev_cat_id = getCategoryId(previousCategory);
+    }
+    if (nextCategory) {
+        nextCategoryId = getCategoryId(nextCategory);
+    }
 
     if (nextCategoryId) {
         await Categoria.findByIdAndUpdate(nextCategoryId, {$set: { name: nextCategory },$addToSet: { jogos: jogoRef }},{ upsert: true, new: true });
@@ -136,9 +142,7 @@ const atualizarCategorias = async (previousCategory, nextCategory, jogoRef) => {
     }
 
     await Categoria.updateMany(
-        { 'jogos._id': jogoRef._id },
-        { $set: { 'jogos.$[jogo].name': jogoRef.name } },
-        { arrayFilters: [{ 'jogo._id': jogoRef._id }] }
+        { 'jogos._id': jogoRef._id }, { $set: { 'jogos.$[jogo].name': jogoRef.name } }, { arrayFilters: [{ 'jogo._id': jogoRef._id }] }
     );
 };
 

@@ -1,8 +1,6 @@
 # ENGWEB2026-Normal
 
-## Aluno
-**Nome:** Soraia Filipa Ribeiro Pereira
-**ID:** A106806
+### Realizado por Soraia Filipa Ribeiro Pereira, a106806
 
 
 # EXERCÍCIO 1
@@ -45,6 +43,7 @@ docker-compose down
 # EXERCÍCIO 2
 
 O modelo derivado para a base de dados é do tipo:
+```
     {
         "_id": "l2",
         "titulo": "1984",
@@ -53,6 +52,7 @@ O modelo derivado para a base de dados é do tipo:
         "genero": "Fantasia",
         "lido": false
     }
+```
 
 O ficheiro JSON desenvolvido encontra-se em [ex2/api_dados/livros.json](ex2/api_dados/livros.json) e contém 10 livros.
 Para importar os dados para o MongoDB, segui a mesma técnica do exercício 1.
