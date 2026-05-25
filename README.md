@@ -40,6 +40,7 @@ docker compose down
 ```
 Opcionalmente, incluir flag --remove-orphans para eliminar o container do mongo totalmente.
 
+Interface swagger a funcionar em http://localhost:17000/api-docs/
 
 # EXERCÍCIO 2
 
@@ -69,3 +70,6 @@ Para parar os containers
 docker compose down
 ```
 Opcionalmente, incluir flag --remove-orphans para eliminar o container do mongo totalmente.
+
+
+Interface a funcionar em http://localhost:19021/
