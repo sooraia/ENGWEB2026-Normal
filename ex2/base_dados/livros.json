@@ -1,0 +1,82 @@
+[
+    {
+        "_id": "l1",
+        "titulo": "O Senhor dos Anéis",
+        "autor": "J.R.R. Tolkien",
+        "paginas": 1178,
+        "genero": "Fantasia",
+        "lido": true
+    },
+    {
+        "_id": "l2",
+        "titulo": "1984",
+        "autor": "George Orwell",
+        "paginas": 1178,
+        "genero": "Fantasia",
+        "lido": false
+    },
+    {
+        "_id": "l3",
+        "titulo": "O Pequeno Príncipe",
+        "autor": "Antoine de Saint-Exupéry",
+        "paginas": 96,
+        "genero": "Ficção",
+        "lido": false
+    },
+    {
+        "_id": "l4",
+        "titulo": "Dom Quixote",
+        "autor": "Miguel de Cervantes",
+        "paginas": 863,
+        "genero": "Aventura",
+        "lido": false
+    },
+    {
+        "_id": "l5",
+        "titulo": "A Guerra dos Tronos",
+        "autor": "George R.R. Martin",
+        "paginas": 694,
+        "genero": "Fantasia",
+        "lido": false
+    },
+    {
+        "_id": "l6",
+        "titulo": "O Código Da Vinci",
+        "autor": "Dan Brown",
+        "paginas": 689,
+        "genero": "Mistério",
+        "lido": true
+    },
+    {
+        "_id": "l7",
+        "titulo": "O Alquimista", 
+        "autor": "Paulo Coelho",
+        "paginas": 208,
+        "genero": "Ficção",
+        "lido": true
+    },
+    {
+        "_id": "l8",
+        "titulo": "O Hobbit",
+        "autor": "J.R.R. Tolkien",
+        "paginas": 310,
+        "genero": "Fantasia",
+        "lido": true
+    },
+    {
+        "_id": "l9",
+        "titulo": "O Morro dos Ventos Uivantes",
+        "autor": "Emily Brontë",
+        "paginas": 416,
+        "genero": "Romance",
+        "lido": true
+    },
+    {
+        "_id": "l10",
+        "titulo": "O Grande Gatsby",
+        "autor": "F. Scott Fitzgerald",
+        "paginas": 180,
+        "genero": "Ficção",
+        "lido": false
+    }
+]

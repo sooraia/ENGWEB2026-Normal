@@ -1,0 +1,272 @@
+[
+    {
+        "_id": "klaus-teuber",
+        "name": "Klaus Teuber",
+        "jogos": [
+            {
+                "_id": "catan",
+                "name": "Catan"
+            }
+        ]
+    },
+    {
+        "_id": "alan-r-moon",
+        "name": "Alan R. Moon",
+        "jogos": [
+            {
+                "_id": "ticket-to-r_ide",
+                "name": "Ticket to R_ide"
+            }
+        ]
+    },
+    {
+        "_id": "jamey-stegmaier",
+        "name": "Jamey Stegmaier",
+        "jogos": [
+            {
+                "_id": "scythe",
+                "name": "Scythe"
+            }
+        ]
+    },
+    {
+        "_id": "jacob-fryxelius",
+        "name": "Jacob Fryxelius",
+        "jogos": [
+            {
+                "_id": "terraforming-mars",
+                "name": "Terraforming Mars"
+            }
+        ]
+    },
+    {
+        "_id": "michael-kiesling",
+        "name": "Michael Kiesling",
+        "jogos": [
+            {
+                "_id": "azul",
+                "name": "Azul"
+            }
+        ]
+    },
+    {
+        "_id": "isaac-childres",
+        "name": "Isaac Childres",
+        "jogos": [
+            {
+                "_id": "gloomhaven",
+                "name": "Gloomhaven"
+            }
+        ]
+    },
+    {
+        "_id": "klaus-jurgen-wrede",
+        "name": "Klaus-J\u00fcrgen Wrede",
+        "jogos": [
+            {
+                "_id": "carcassonne",
+                "name": "Carcassonne"
+            }
+        ]
+    },
+    {
+        "_id": "matt-leacock",
+        "name": "Matt Leacock",
+        "jogos": [
+            {
+                "_id": "pandemic",
+                "name": "Pandemic"
+            }
+        ]
+    },
+    {
+        "_id": "elizabeth-hargrave",
+        "name": "Elizabeth Hargrave",
+        "jogos": [
+            {
+                "_id": "wingspan",
+                "name": "Wingspan"
+            }
+        ]
+    },
+    {
+        "_id": "vlaada-chvatil",
+        "name": "Vlaada Chv\u00e1til",
+        "jogos": [
+            {
+                "_id": "codenames",
+                "name": "Codenames"
+            }
+        ]
+    },
+    {
+        "_id": "antoine-bauza",
+        "name": "Antoine Bauza",
+        "jogos": [
+            {
+                "_id": "7-wonders",
+                "name": "7 Wonders"
+            }
+        ]
+    },
+    {
+        "_id": "marc-andre",
+        "name": "Marc Andr\u00e9",
+        "jogos": [
+            {
+                "_id": "splendor",
+                "name": "Splendor"
+            }
+        ]
+    },
+    {
+        "_id": "cole-wehrle",
+        "name": "Cole Wehrle",
+        "jogos": [
+            {
+                "_id": "root",
+                "name": "Root"
+            }
+        ]
+    },
+    {
+        "_id": "james-a-wilson",
+        "name": "James A. Wilson",
+        "jogos": [
+            {
+                "_id": "everdell",
+                "name": "Everdell"
+            }
+        ]
+    },
+    {
+        "_id": "martin-wallace",
+        "name": "Martin Wallace",
+        "jogos": [
+            {
+                "_id": "brass-birmingham",
+                "name": "Brass: Birmingham"
+            }
+        ]
+    },
+    {
+        "_id": "stefan-feld",
+        "name": "Stefan Feld",
+        "jogos": [
+            {
+                "_id": "castles-of-burgundy",
+                "name": "The Castles of Burgundy"
+            }
+        ]
+    },
+    {
+        "_id": "randy-flynn",
+        "name": "Randy Flynn",
+        "jogos": [
+            {
+                "_id": "cascadia",
+                "name": "Cascadia"
+            }
+        ]
+    },
+    {
+        "_id": "eric-m-lang",
+        "name": "Eric M. Lang",
+        "jogos": [
+            {
+                "_id": "blood-rage",
+                "name": "Blood Rage"
+            }
+        ]
+    },
+    {
+        "_id": "mathias-wigge",
+        "name": "Mathias Wigge",
+        "jogos": [
+            {
+                "_id": "ark-nova",
+                "name": "Ark Nova"
+            }
+        ]
+    },
+    {
+        "_id": "r-eric-reuss",
+        "name": "R. Eric Reuss",
+        "jogos": [
+            {
+                "_id": "spirit-island",
+                "name": "Spirit Island"
+            }
+        ]
+    },
+    {
+        "_id": "paul-dennen",
+        "name": "Paul Dennen",
+        "jogos": [
+            {
+                "_id": "dune-imperium",
+                "name": "Dune: Imperium"
+            }
+        ]
+    },
+    {
+        "_id": "min-elwen",
+        "name": "Min & Elwen",
+        "jogos": [
+            {
+                "_id": "lost-ruins-of-arnak",
+                "name": "Lost Ruins of Arnak"
+            }
+        ]
+    },
+    {
+        "_id": "donald-x-vaccarino",
+        "name": "Donald X. Vaccarino",
+        "jogos": [
+            {
+                "_id": "dominion",
+                "name": "Dominion"
+            }
+        ]
+    },
+    {
+        "_id": "christian-t-petersen",
+        "name": "Christian T. Petersen",
+        "jogos": [
+            {
+                "_id": "twilight-imperium-4",
+                "name": "Twilight Imperium: Fourth Edition"
+            }
+        ]
+    },
+    {
+        "_id": "uwe-rosenberg",
+        "name": "Uwe Rosenberg",
+        "jogos": [
+            {
+                "_id": "patchwork",
+                "name": "Patchwork"
+            }
+        ]
+    },
+    {
+        "_id": "richard-garfield",
+        "name": "Richard Garfield",
+        "jogos": [
+            {
+                "_id": "king-of-tokyo",
+                "name": "King of Tokyo"
+            }
+        ]
+    },
+    {
+        "_id": "andreas-seyfarth",
+        "name": "Andreas Seyfarth",
+        "jogos": [
+            {
+                "_id": "puerto-rico",
+                "name": "Puerto Rico"
+            }
+        ]
+    }
+]

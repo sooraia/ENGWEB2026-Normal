@@ -1,0 +1,128 @@
+[
+    {
+        "_id": "family",
+        "name": "Family",
+        "jogos": [
+            {
+                "_id": "catan",
+                "name": "Catan"
+            },
+            {
+                "_id": "ticket-to-r_ide",
+                "name": "Ticket to R_ide"
+            },
+            {
+                "_id": "azul",
+                "name": "Azul"
+            },
+            {
+                "_id": "carcassonne",
+                "name": "Carcassonne"
+            },
+            {
+                "_id": "pandemic",
+                "name": "Pandemic"
+            },
+            {
+                "_id": "splendor",
+                "name": "Splendor"
+            },
+            {
+                "_id": "cascadia",
+                "name": "Cascadia"
+            },
+            {
+                "_id": "patchwork",
+                "name": "Patchwork"
+            }
+        ]
+    },
+    {
+        "_id": "strategy",
+        "name": "Strategy",
+        "jogos": [
+            {
+                "_id": "scythe",
+                "name": "Scythe"
+            },
+            {
+                "_id": "terraforming-mars",
+                "name": "Terraforming Mars"
+            },
+            {
+                "_id": "gloomhaven",
+                "name": "Gloomhaven"
+            },
+            {
+                "_id": "wingspan",
+                "name": "Wingspan"
+            },
+            {
+                "_id": "7-wonders",
+                "name": "7 Wonders"
+            },
+            {
+                "_id": "root",
+                "name": "Root"
+            },
+            {
+                "_id": "everdell",
+                "name": "Everdell"
+            },
+            {
+                "_id": "brass-birmingham",
+                "name": "Brass: Birmingham"
+            },
+            {
+                "_id": "castles-of-burgundy",
+                "name": "The Castles of Burgundy"
+            },
+            {
+                "_id": "blood-rage",
+                "name": "Blood Rage"
+            },
+            {
+                "_id": "ark-nova",
+                "name": "Ark Nova"
+            },
+            {
+                "_id": "spirit-island",
+                "name": "Spirit Island"
+            },
+            {
+                "_id": "dune-imperium",
+                "name": "Dune: Imperium"
+            },
+            {
+                "_id": "lost-ruins-of-arnak",
+                "name": "Lost Ruins of Arnak"
+            },
+            {
+                "_id": "dominion",
+                "name": "Dominion"
+            },
+            {
+                "_id": "twilight-imperium-4",
+                "name": "Twilight Imperium: Fourth Edition"
+            },
+            {
+                "_id": "puerto-rico",
+                "name": "Puerto Rico"
+            }
+        ]
+    },
+    {
+        "_id": "party",
+        "name": "Party",
+        "jogos": [
+            {
+                "_id": "codenames",
+                "name": "Codenames"
+            },
+            {
+                "_id": "king-of-tokyo",
+                "name": "King of Tokyo"
+            }
+        ]
+    }
+]

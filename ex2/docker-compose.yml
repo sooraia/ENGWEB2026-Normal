@@ -1,0 +1,41 @@
+services:
+  mongodb:
+    build:
+      context: ./base_dados
+      dockerfile: Dockerfile.mongo
+    container_name: mongodb_leitura
+    networks:
+      - livros-network
+
+  api_dados:
+    build: 
+      context: ./api_dados
+      dockerfile: Dockerfile 
+    container_name: api_dados
+    ports:
+      - "19020:19020"
+    environment:
+      - MONGO_URL=mongodb://mongodb:27017/leitura
+      - PORT=19020
+    depends_on:
+      - mongodb
+    networks:
+      - livros-network
+
+  interface:
+    build:
+      context: ./interface
+      dockerfile: Dockerfile
+    container_name: interface_web
+    ports:
+      - "19021:19021"
+    environment:
+      - API_URL=http://api_dados:19020/api
+    depends_on:
+      - api_dados
+    networks:
+      - livros-network
+
+networks:
+  livros-network:
+    driver: bridge

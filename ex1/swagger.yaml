@@ -1,0 +1,315 @@
+openapi: 3.0.0
+info:
+  title: API de Jogos de Tabuleiro
+  description: API para consultar e gerir jogos de tabuleiro, autores e categorias.
+  version: 1.0.0
+servers:
+  - url: http://localhost:17000
+    description: Servidor da API
+
+tags:
+  - name: Jogos
+    description: Operações sobre jogos
+  - name: Autores
+    description: Operações sobre autores
+  - name: Categorias
+    description: Operações sobre categorias
+
+paths:
+  /autores:
+    get:
+      tags:
+        - Autores
+      summary: Lista todos os autores
+      description: Devolve a lista de autores ordenada alfabeticamente pelo nome, incluindo os jogos associados.
+      responses:
+        '200':
+          description: Lista de autores.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Autor'
+        '500':
+          description: Erro interno do servidor.
+
+  /categorias:
+    get:
+      tags:
+        - Categorias
+      summary: Lista todas as categorias
+      description: Devolve a lista de categorias ordenada alfabeticamente pelo nome, incluindo os jogos associados.
+      responses:
+        '200':
+          description: Lista de categorias.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Categoria'
+        '500':
+          description: Erro interno do servidor.
+
+  /jogos:
+    get:
+      tags:
+        - Jogos
+      summary: Lista jogos
+      description: Devolve todos os jogos. Se for usado o parâmetro `editora`, devolve apenas os jogos dessa editora.
+      parameters:
+        - in: query
+          name: editora
+          schema:
+            type: string
+          description: Nome da editora a filtrar.
+      responses:
+        '200':
+          description: Lista de jogos.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/JogoResumo'
+        '500':
+          description: Erro interno do servidor.
+
+    post:
+      tags:
+        - Jogos
+      summary: Cria um novo jogo
+      description: Acrescenta um novo jogo à base de dados.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/JogoInput'
+      responses:
+        '201':
+          description: Jogo criado com sucesso.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Jogo'
+        '400':
+          description: Pedido inválido.
+
+  /jogos/{id}:
+    get:
+      tags:
+        - Jogos
+      summary: Obtém um jogo por id
+      description: Devolve toda a informação do jogo com o identificador indicado.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: Identificador do jogo.
+      responses:
+        '200':
+          description: Jogo encontrado.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Jogo'
+        '404':
+          description: Jogo não encontrado.
+        '500':
+          description: Erro interno do servidor.
+
+    put:
+      tags:
+        - Jogos
+      summary: Atualiza um jogo
+      description: Atualiza o registo do jogo com o identificador indicado.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: Identificador do jogo.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/JogoInput'
+      responses:
+        '200':
+          description: Jogo atualizado com sucesso.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Jogo'
+        '404':
+          description: Jogo não encontrado.
+        '500':
+          description: Erro interno do servidor.
+
+    delete:
+      tags:
+        - Jogos
+      summary: Remove um jogo
+      description: Elimina o registo do jogo com o identificador indicado.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: Identificador do jogo.
+      responses:
+        '200':
+          description: Jogo eliminado com sucesso.
+        '404':
+          description: Jogo não encontrado.
+        '500':
+          description: Erro interno do servidor.
+
+components:
+  schemas:
+    JogoResumo:
+      type: object
+      properties:
+        _id:
+          type: string
+        name:
+          type: string
+        year:
+          type: integer
+        category:
+          type: string
+        minPlayers:
+          type: integer
+      required:
+        - _id
+        - name
+
+    JogoInput:
+      type: object
+      properties:
+        name:
+          type: string
+        year:
+          type: integer
+        category:
+          type: string
+        minPlayers:
+          type: integer
+        maxPlayers:
+          type: integer
+        playingTimeMinutes:
+          type: integer
+        descriptionEN:
+          type: string
+        autores:
+          type: array
+          items:
+            $ref: '#/components/schemas/AutorRef'
+        editoras:
+          type: array
+          items:
+            $ref: '#/components/schemas/EditoraRef'
+        mecanicas:
+          type: array
+          items:
+            $ref: '#/components/schemas/MecanicaRef'
+        premios:
+          type: array
+          items:
+            $ref: '#/components/schemas/PremioRef'
+      required:
+        - name
+
+    Jogo:
+      allOf:
+        - $ref: '#/components/schemas/JogoInput'
+        - type: object
+          properties:
+            _id:
+              type: string
+
+    Autor:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        jogos:
+          type: array
+          items:
+            $ref: '#/components/schemas/JogoMini'
+      required:
+        - id
+        - name
+        - jogos
+
+    Categoria:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        jogos:
+          type: array
+          items:
+            $ref: '#/components/schemas/JogoMini'
+      required:
+        - id
+        - name
+        - jogos
+
+    JogoMini:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+      required:
+        - id
+        - name
+
+    AutorRef:
+      type: object
+      properties:
+        _id:
+          type: string
+        name:
+          type: string
+
+    EditoraRef:
+      type: object
+      properties:
+        _id:
+          type: string
+        name:
+          type: string
+        country:
+          type: string
+
+    MecanicaRef:
+      type: object
+      properties:
+        _id:
+          type: string
+        name:
+          type: string
+
+    PremioRef:
+      type: object
+      properties:
+        _id:
+          type: string
+        name:
+          type: string
+        year:
+          type: integer
